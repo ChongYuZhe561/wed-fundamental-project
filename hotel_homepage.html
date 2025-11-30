@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" href="homepage.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="border" role="navigation" aria-label="Main navigation">
+                <img src="Logo.png" alt="logo" class="logo">
+                <!--Page name-->
+                <div class="pagetitle">Welcome</div>
+                <!--Pages header-->
+                <div class="pagesbar">
+                    <a href="./hotel_homepage.html" class="page">Home</a>
+                    <a href="./hotel_bookingpage.html" class="page">Booking</a>
+                    <a href="./hotel_contactpage.html" class="page">Contacts</a>
+                </div>
+            </nav>
+
+            <div class="hero">
+                <div class="video-wrapper">
+                    <video class="hero-video current" autoplay muted loop playsinline preload="auto">
+                        <source src="homepage_resources/canary%20island-uhd_2560_1440_60fps.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <!-- edge click zones (hover at very edge changes cursor; click to change video) -->
+                <div class="edge-zone left-zone" aria-hidden="true"></div>
+                <div class="edge-zone right-zone" aria-hidden="true"></div>
+
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="hero-tag">Sixty Seven Hotel</div>
+                    <h1 class="hero-title">Canary Island</h1>
+                    <p class="hero-sub">145 Jalan Ampang, 50450 Kuala Lumpur, Malaysia</p>
+                    <div class="hero-tiles">
+                        <div class="tile">LOCATION</div>
+                        <div class="tile">ACCOMMODATIONS</div>
+                        <div class="tile">FACILITIES &amp; AMENITIES</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="intro">
+                <h1>Welcome to Six Seven Hotel</h1>
+                <p>Experience luxury and comfort like never before at Six Seven Hotel. Our exquisite rooms and top-notch amenities are designed to provide you with an unforgettable stay. Whether you're here for business or leisure, we have everything you need to make your visit exceptional. Book your stay with us today and indulge in the ultimate hospitality experience!</p>
+            </div>
+        </main>
+        <!-- Gallery carousel (5 image frames) -->
+        <section class="gallery-carousel" aria-label="Highlights gallery">
+            <h2>FACILITIES & AMENITIES</h2>
+            <p class="carousel-meta">Tailored stays, signature rituals, and spaces designed for modern serenity.</p>
+            <div class="carousel-wrap">
+                <div class="carousel-window">
+                    <button class="carousel-btn prev" aria-label="Previous">‹</button>
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                        <div class="slide">
+                            <figure class="slide-card">
+                                <img src="./homepage_resources/Sunrise Infinity Pool-unsplash.jpg" alt="Seaside infinity pool" loading="lazy">
+                                <figcaption>
+                                    <p class="slide-overline">POOL DECK</p>
+                                    <h3>Sunrise Infinity Pool</h3>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="slide">
+                            <figure class="slide-card">
+                                <img src="./homepage_resources/gym-unsplash.jpg" alt="Luxury suite interior" loading="lazy">
+                                <figcaption>
+                                    <p class="slide-overline">GYM</p>
+                                    <h3>Daily Vitality Ritual</h3>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="slide">
+                            <figure class="slide-card">
+                                <img src="./homepage_resources/Dining-unsplash.jpg" alt="Dining terrace" loading="lazy">
+                                <figcaption>
+                                    <p class="slide-overline">DINING</p>
+                                    <h3>Terrace Tasting Menu</h3>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="slide">
+                            <figure class="slide-card">
+                                <img src="./homepage_resources/spa-unsplash.jpg" alt="Spa room" loading="lazy">
+                                <figcaption>
+                                    <p class="slide-overline">WELLNESS</p>
+                                    <h3>Botanical Wellness Ritual</h3>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="slide">
+                            <figure class="slide-card">
+                                <img src="./homepage_resources/urban retreat.jpg" alt="Private villa" loading="lazy">
+                                <figcaption>
+                                    <p class="slide-overline">SPA</p>
+                                    <h3>An Urban Retreat</h3>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next" aria-label="Next">›</button>
+                </div>
+            </div>
+            <div class="carousel-dots" role="tablist" aria-label="Gallery pages"></div>
+        </section>
+        
+        <!-- Footer: match provided design -->
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    <img src="Logo.png" alt="Four Seasons" />
+                </div>
+
+                <div class="footer-columns">
+                    <div class="col">
+                        <h4>About</h4>
+                        <ul>
+                            <li>ABOUT US</li>
+                            <li>FOUR SEASONS FOR GOOD</li>
+                            <li>HEALTH AND SAFETY</li>
+                            <li>CAREERS</li>
+                            <li>CONTACT US</li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <h4>Reservations</h4>
+                        <ul>
+                            <li>REQUEST AN INVOICE</li>
+                            <li>FIND A RESERVATION</li>
+                            <li>EMAIL PREFERENCES</li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <h4>News</h4>
+                        <ul>
+                            <li>PRESS ROOM</li>
+                            <li>NEW OPENINGS</li>
+                            <li>MAGAZINE</li>
+                            <li>NEWSLETTER</li>
+                        </ul>
+                    </div>
+
+                    <div class="col">
+                        <h4>More</h4>
+                        <ul>
+                            <li>PRIVATE JET</li>
+                            <li>YACHTS</li>
+                            <li>RESIDENCES</li>
+                            <li>VILLA &amp; RESIDENCE RENTALS</li>
+                            <li>GIFT CARDS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <a class="social" href="#" aria-label="facebook">
+                        <img src="homepage_resources/facebook-svgrepo-com.svg" alt="Facebook" />
+                    </a>
+                    <a class="social" href="#" aria-label="instagram">
+                        <img src="homepage_resources/instagram-svgrepo-com.svg" alt="Instagram" />
+                    </a>
+                    <a class="social" href="#" aria-label="youtube">
+                        <img src="homepage_resources/youtube-svgrepo-com.svg" alt="YouTube" />
+                    </a>
+                </div>
+
+                <hr class="footer-divider" />
+
+                <div class="footer-bottom">
+                    <div class="legal-links">Legal Notice · Privacy Notice · Cookie Preferences · Do Not Sell My Personal Information · Accessibility Policy · Modern Slavery Statement</div>
+                    <div class="bottom-right">
+                        <div class="copyright">©Six Seven Hotels Limited 1997-2025. All Rights Reserved.</div>
+                        <div class="language">ENGLISH ▾</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            (function(){
+                const wrapper = document.querySelector('.video-wrapper');
+                let currentVideo = wrapper.querySelector('video.hero-video');
+                const tagEl = document.querySelector('.hero-tag');
+                const titleEl = document.querySelector('.hero-title');
+                const subEl = document.querySelector('.hero-sub');
+
+                const items = [
+                    {
+                        src: 'homepage_resources/canary%20island-uhd_2560_1440_60fps.mp4',
+                        tag: 'Sixty Seven Hotel',
+                        title: 'Canary Island',
+                        sub: '145 Jalan Ampang, 50450 Kuala Lumpur, Malaysia'
+                    },
+                    {
+                        src: 'homepage_resources/miami%20beachside.mp4',
+                        tag: 'Sixty Seven Hotel',
+                        title: 'Miami Beachside',
+                        sub: '145 Jalan Ampang, 50450 Kuala Lumpur, Malaysia'
+                    },
+                    {
+                        src: 'homepage_resources/maldives.mp4',
+                        tag: 'Sixty Seven Hotel',
+                        title: 'Maldives',
+                        sub: '145 Jalan Ampang, 50450 Kuala Lumpur, Malaysia'
+                    }
+                ];
+
+                // determine starting index from current video's source
+                const srcEl = currentVideo && currentVideo.querySelector('source');
+                let idx = items.findIndex(i => srcEl && i.src === srcEl.getAttribute('src'));
+                if (idx === -1) idx = 0;
+
+                function updateHeroText(i){
+                    const item = items[(i + items.length) % items.length];
+                    if (!item) return;
+                    tagEl.textContent = item.tag;
+                    titleEl.textContent = item.title;
+                    subEl.textContent = item.sub;
+                }
+
+                function createVideo(src){
+                    const v = document.createElement('video');
+                    v.className = 'hero-video';
+                    v.setAttribute('autoplay','');
+                    v.muted = true;
+                    v.loop = true;
+                    v.playsInline = true;
+                    v.preload = 'auto';
+                    const s = document.createElement('source');
+                    s.src = src;
+                    s.type = 'video/mp4';
+                    v.appendChild(s);
+                    return v;
+                }
+
+                function showIndex(i, direction = 'right'){
+                    idx = (i + items.length) % items.length;
+                    const item = items[idx];
+                    const newV = createVideo(item.src);
+
+                    // set initial position depending on direction
+                    if(direction === 'right'){
+                        newV.classList.add('enter-right');
+                        currentVideo.classList.add('leave-to-left');
+                    } else {
+                        newV.classList.add('enter-left');
+                        currentVideo.classList.add('leave-to-right');
+                    }
+
+                    wrapper.appendChild(newV);
+                    // force reflow so transitions run
+                    newV.getBoundingClientRect();
+
+                    // trigger animations
+                    newV.classList.add('active');
+                    currentVideo.classList.add('active-leave');
+
+                    // update hero copy for the incoming video
+                    updateHeroText(idx);
+
+                    // when the incoming video finishes its transition, remove the old one
+                    function onEnd(){
+                        if(currentVideo && currentVideo.parentNode) currentVideo.parentNode.removeChild(currentVideo);
+                        newV.classList.remove('enter-right','enter-left','active');
+                        newV.classList.add('current');
+                        currentVideo = newV;
+                        newV.removeEventListener('transitionend', onEnd);
+                    }
+                    newV.addEventListener('transitionend', onEnd);
+
+                    // try to start playback
+                    newV.play().catch(()=>{});
+                }
+
+                // edge zones: change cursor via CSS; listen for clicks to change video
+                const leftZone = document.querySelector('.edge-zone.left-zone');
+                const rightZone = document.querySelector('.edge-zone.right-zone');
+                if (leftZone) leftZone.addEventListener('click', ()=> showIndex(idx-1, 'left'));
+                if (rightZone) rightZone.addEventListener('click', ()=> showIndex(idx+1, 'right'));
+
+                // hide behaviour for mouseleave no longer needed (no arrows)
+
+                // initialize hero text from current video
+                updateHeroText(idx);
+            })();
+        </script>
+        <script>
+            (function(){
+                const track = document.querySelector('.carousel-track');
+                const viewportEl = document.querySelector('.carousel-viewport');
+                const slides = Array.from(track.querySelectorAll('.slide'));
+                const prevBtn = document.querySelector('.carousel-btn.prev');
+                const nextBtn = document.querySelector('.carousel-btn.next');
+                const dotsContainer = document.querySelector('.carousel-dots');
+                let index = 0;
+                const slideCount = slides.length;
+
+                function update(){
+                    const viewportWidth = viewportEl.offsetWidth;
+                    const trackWidth = track.scrollWidth;
+                    const slide = slides[index];
+                    const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+                    const viewportCenter = viewportWidth / 2;
+                    let translate = viewportCenter - slideCenter;
+                    const minTranslate = viewportWidth - trackWidth;
+                    const maxTranslate = 0;
+                    translate = Math.max(minTranslate, Math.min(maxTranslate, translate));
+                    track.style.transform = `translateX(${translate}px)`;
+                    Array.from(dotsContainer.children).forEach((btn,i)=> btn.classList.toggle('active', i === index));
+                }
+
+                function goNext(){ index = (index + 1) % slideCount; update(); }
+                function goPrev(){ index = (index - 1 + slideCount) % slideCount; update(); }
+
+                prevBtn.addEventListener('click', ()=>{ stopAuto(); goPrev(); startAuto(); });
+                nextBtn.addEventListener('click', ()=>{ stopAuto(); goNext(); startAuto(); });
+
+                // dots
+                for(let i=0;i<slideCount;i++){
+                    const b = document.createElement('button');
+                    b.addEventListener('click', ()=>{ index = i; update(); stopAuto(); startAuto(); });
+                    if(i===0) b.classList.add('active');
+                    dotsContainer.appendChild(b);
+                }
+
+                let autoplay;
+                function startAuto(){
+                    stopAuto();
+                    autoplay = setInterval(goNext, 4000);
+                }
+                function stopAuto(){
+                    if(autoplay) clearInterval(autoplay);
+                    autoplay = null;
+                }
+                startAuto();
+
+                document.querySelector('.gallery-carousel').addEventListener('mouseenter', stopAuto);
+                document.querySelector('.gallery-carousel').addEventListener('mouseleave', startAuto);
+
+                // resize handling to re-position
+                window.addEventListener('resize', ()=> setTimeout(update,120));
+
+                // initial position (wait for layout)
+                window.requestAnimationFrame(()=> setTimeout(update,50));
+            })();
+        </script>
+    </body>
+</html>
+

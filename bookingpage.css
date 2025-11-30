@@ -1,0 +1,110 @@
+        html, body {
+            margin: 0;
+            padding: 0;
+            scrollbar-width: none;
+        }
+        body {
+            background-color: #eae8e0;
+        }
+
+        .border {
+            padding: 15px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            background-color: #b6ac9f;
+        }
+
+        .page {
+            text-decoration: none;
+            font-size : 120%;
+            color: #4f443d;
+            margin-right: 12px;
+        }
+
+        .pagesbar {
+            display:flex;
+            margin-left:auto;
+            gap:10px;
+            align-items:center;
+        }
+        
+        .logo {
+            margin-right: 8px;
+            width: 40px;
+            height: auto;
+        }
+
+        .pagetitle{
+            font-size:120%;
+        }
+
+        .box{
+            padding:0%;
+            margin:0%;
+            margin-top:15px;
+            min-height: 250px;
+            height: auto;
+            align-items:center;
+            overflow:auto;
+        }
+
+        .picture{
+            float:left;
+            margin-left:0%;
+            padding-right:30px;
+            height:auto;
+            height:350px;
+        }
+        
+        .roomtype{
+            display:flex;
+            margin-top:15px;
+            font-size:larger;
+            font-style:italic;
+        }
+
+        .description{
+            display:flex;
+            gap:12px;
+            color:#4f443d;
+            margin-top:15px;
+        }
+
+        .bookingButton{
+            display: block;
+            position:fixed;
+            bottom:40px;
+            right:40px;
+            background-color: #b6ac9f;
+            color: #4f443d;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .popup-panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #b6ac9f;
+            color: #4f443d;
+            padding: 50px;
+            z-index: 1000; 
+        }
+        .popup-panel.active {
+            display: block;
+        }
+
+        label{
+            width: 100px;
+            display: inline-block;
+            text-align: left;
+
+        }
+        .room label{
+            width:fit-content;
+        }

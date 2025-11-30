@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+    <link rel="stylesheet" href="bookingpage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <nav class="border" role="navigation" aria-label="Main navigation">
+            <img src="Logo.png" alt="logo" class="logo">
+            <!--Page name-->
+            <div class="pagetitle">
+                Suites
+            </div>
+            <!--Pages header-->
+            <div class="pagesbar">
+                <a href="./hotel_homepage.html" class="page">Home</a>
+                <a href="./hotel_bookingpage.html" class="page">Booking</a>
+                <a href="./hotel_contactpage.html" class="page">Contacts</a>
+            </div>
+        </nav>
+        
+        <div class="box">
+            <img src="Welcome.jpeg" class="picture" alt="business suite">
+                <div class="roomtype">
+                    <b>Business Suite</b>
+                </div>
+
+                <div class="description">
+                <details open>
+                    <summary><b>Features</b></summary>
+                    <ul>
+                        <li>1 Bed - King Sized</li>
+                        <li>Living/Sitting Area</li>
+                        <li>Separate Bathroom with Tub</li>
+                        <li>Wireless Internet</li>
+                        <li>Complimentary Coffee/Tea Maker</li>
+                    </ul>
+                </details>
+                <details open>
+                    <summary><b>Complimentary</b></summary>
+                    <ul>
+                        <li>Breakfast Pass</li>
+                        <li>Swimming Pool Pass</li>
+                        <li>Gym Pass</li>
+                    </ul>
+                </details>
+                </div>
+        </div>
+
+        <div class="box">
+            <img src="Welcome.jpeg" class="picture" alt="couple suite">
+                <div class="roomtype">
+                    <b>Couple Suite</b>
+                </div>
+
+                <div class="description">
+                <details open>
+                    <summary><b>Features</b></summary>
+                    <ul>
+                        <li>2 Bed - King Sized</li>
+                        <li>Living/Sitting Area</li>
+                        <li>Walk-in Wardrobe</li>
+                        <li>Bathroom with Tub</li>
+                        <li>Mini Bar</li>
+                    </ul>
+                </details>
+                </div>
+        </div>
+
+        <div class="box">
+            <img src="Welcome.jpeg" class="picture" alt="luxury suite">
+                <div class="roomtype">
+                    <b>Director Suite</b>
+                </div>
+
+                <div class="description">
+                <details open>
+                    <summary><b>Features</b></summary>
+                    <ul>
+                        <li>1 Bed - Super King Sized</li>
+                        <li>Living/Sitting Area</li>
+                        <li>Walk-in Wardrobe</li>
+                        <li>City View Balcony</li>
+                        <li>Bathroom with Tub</li>
+                        <li>Complimentary Beverage Bar</li>
+                    </ul>
+                </details>
+                <details open>
+                    <summary><b>Complimentary</b></summary>
+                    <ul>
+                        <li>Breakfast Pass</li>
+                        <li>Swimming Pool Pass</li>
+                        <li>Gym Pass</li>
+                        <li>Spa Access</li>
+                    </ul>
+                </details>
+                </div>
+        </div>
+        <button id="bookBtn" type="button" class="bookingButton">Book room</button>
+
+        <!-- Popup (moved out of the button, fixed classes and unique IDs) -->
+        <div id="bookingPopup" class="popup-panel" role="dialog" aria-hidden="true" aria-labelledby="bookingTitle">
+            <div>
+                <h2 id="bookingTitle">Book Business Suite</h2>
+                <form id="bookingForm">
+                    <label>First Name: <input type="text" name="firstname" id="firstname" required></label><br><br>
+                    <label>Last Name: <input type="text" name="lastname" id="lastname" required></label><br><br>
+                    <label>E-mail: <input type="email" name="email" id="email" required></label><br><br>
+                    <label>From: <input type="datetime-local" name="bookingdate" id="bookingdate" required></label><br><br>
+                    <label>Until: <input type="datetime-local" name="checkoutdate" id="checkoutdate" required></label><br><br>
+
+                    <section class="room">
+                    <label>Which room would you like to book with us?</label><br>
+                    <label>Business Suite<input type="radio" name="roomtype" id="business-suite" required></label>
+                    <label>Couple Suite<input type="radio" name="roomtype" id="couple-suite" required></label>
+                    <label>Director Suite<input type="radio" name="roomtype" id="director-suite" require></label>
+                    </section>
+
+                    <br><br><button type="submit">Submit</button>
+                    <button type="button" id="closeBtn">Close</button>
+                </form>
+            </div>
+        </div>
+
+    <script>
+        // simple JS to open/close popup and handle click-outside + Esc
+        const bookBtn = document.getElementById('bookBtn');
+        const popup = document.getElementById('bookingPopup');
+        const closeBtn = document.getElementById('closeBtn');
+
+        function openPopup() {
+            popup.classList.add('active');
+            popup.setAttribute('aria-hidden', 'false');
+            // optional: move focus for accessibility
+            document.getElementById('firstname').focus();
+        }
+
+        function closePopup() {
+            popup.classList.remove('active');
+            popup.setAttribute('aria-hidden', 'true');
+            bookBtn.focus();
+        }
+
+        bookBtn.addEventListener('click', openPopup);
+        closeBtn.addEventListener('click', closePopup);
+
+        // close when clicking outside the panel
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) closePopup();
+        });
+
+        // close on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('active')) closePopup();
+        });
+
+        // optional: prevent form from reloading page during testing
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Forwarding to purchase page');
+            closePopup();
+            //forward to purchase page
+            window.location.href = "hotel_purchasepage.html";
+        });
+
+    </script>
+    </body>
+</html>

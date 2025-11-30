@@ -1,3 +1,99 @@
+/* Accommodations: full-width carousel */
+.accommodations {
+    padding: 40px 0 24px;
+}
+.accommodations h2 {
+    font-size: 28px;
+    letter-spacing: 0.08em;
+    margin: 0 24px 8px;
+}
+.accom-meta {
+    color: #4f443d;
+    margin: 0 24px 24px;
+}
+
+.accom-carousel {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+}
+.accom-viewport {
+    width: 100%;
+    overflow: hidden;
+}
+.accom-track {
+    display: flex;
+    gap: 16px;
+    will-change: transform;
+    transition: transform 500ms ease;
+    padding: 0 24px;
+}
+.accom-slide {
+    flex: 0 0 auto;
+    width: min(80vw, 1200px);
+}
+.accom-card {
+    position: relative;
+    margin: 0;
+}
+.accom-card img {
+    width: 100%;
+    height: clamp(240px, 40vw, 560px);
+    object-fit: cover;
+    border-radius: 12px;
+}
+.accom-card figcaption {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+.accom-overline {
+    letter-spacing: 0.16em;
+    font-size: 12px;
+    margin: 0 0 6px 0;
+}
+.accom-card h3 {
+    margin: 0;
+    font-size: clamp(18px, 3vw, 28px);
+}
+
+.accom-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.accom-btn.prev { left: 12px; }
+.accom-btn.next { right: 12px; }
+.accom-btn:hover { background: rgba(0,0,0,0.5); }
+
+.accom-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 12px;
+}
+.accom-dots button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: #c9c2b6;
+    cursor: pointer;
+}
+.accom-dots button.active { background: #4f443d; }
 html, body {
             margin: 0;
             padding: 0;

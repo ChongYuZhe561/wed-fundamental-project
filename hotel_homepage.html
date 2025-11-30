@@ -50,6 +50,56 @@
                 <h1>Welcome to Six Seven Hotel</h1>
                 <p>Experience luxury and comfort like never before at Six Seven Hotel. Our exquisite rooms and top-notch amenities are designed to provide you with an unforgettable stay. Whether you're here for business or leisure, we have everything you need to make your visit exceptional. Book your stay with us today and indulge in the ultimate hospitality experience!</p>
             </div>
+            <!-- Accommodations: full-width carousel -->
+            <section class="accommodations" aria-label="Accommodations">
+                <h2>ACCOMMODATIONS</h2>
+                <p class="accom-meta">Elegant rooms and suites crafted for comfort.</p>
+                <div class="accom-carousel">
+                    <button class="accom-btn prev" aria-label="Previous">‹</button>
+                    <div class="accom-viewport">
+                        <div class="accom-track">
+                            <div class="accom-slide">
+                                <figure class="accom-card">
+                                    <img src="homepage_resources/room-deluxe.jpg" alt="Deluxe Room" loading="lazy">
+                                    <figcaption>
+                                        <p class="accom-overline">DELUXE ROOM</p>
+                                        <h3>City View Deluxe</h3>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="accom-slide">
+                                <figure class="accom-card">
+                                    <img src="homepage_resources/room-suite.jpg" alt="Executive Suite" loading="lazy">
+                                    <figcaption>
+                                        <p class="accom-overline">EXECUTIVE SUITE</p>
+                                        <h3>Executive Corner Suite</h3>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="accom-slide">
+                                <figure class="accom-card">
+                                    <img src="homepage_resources/room-family.jpg" alt="Family Room" loading="lazy">
+                                    <figcaption>
+                                        <p class="accom-overline">FAMILY ROOM</p>
+                                        <h3>Two-Bedroom Family</h3>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="accom-slide">
+                                <figure class="accom-card">
+                                    <img src="homepage_resources/room-villa.jpg" alt="Private Villa" loading="lazy">
+                                    <figcaption>
+                                        <p class="accom-overline">PRIVATE VILLA</p>
+                                        <h3>Garden Pool Villa</h3>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="accom-btn next" aria-label="Next">›</button>
+                </div>
+                <div class="accom-dots" role="tablist" aria-label="Accommodations pages"></div>
+            </section>
         </main>
         <!-- Gallery carousel (5 image frames) -->
         <section class="gallery-carousel" aria-label="Highlights gallery">
@@ -352,6 +402,66 @@
                 window.addEventListener('resize', ()=> setTimeout(update,120));
 
                 // initial position (wait for layout)
+                window.requestAnimationFrame(()=> setTimeout(update,50));
+            })();
+        </script>
+        <script>
+            // Accommodations full-bleed carousel
+            (function(){
+                const track = document.querySelector('.accom-track');
+                const viewportEl = document.querySelector('.accom-viewport');
+                if(!track || !viewportEl) return;
+                const slides = Array.from(track.querySelectorAll('.accom-slide'));
+                const prevBtn = document.querySelector('.accom-btn.prev');
+                const nextBtn = document.querySelector('.accom-btn.next');
+                const dotsContainer = document.querySelector('.accom-dots');
+                let index = 0;
+                const slideCount = slides.length;
+
+                function update(){
+                    const viewportWidth = viewportEl.offsetWidth;
+                    const trackWidth = track.scrollWidth;
+                    const slide = slides[index];
+                    const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+                    const viewportCenter = viewportWidth / 2;
+                    let translate = viewportCenter - slideCenter;
+                    const minTranslate = viewportWidth - trackWidth;
+                    const maxTranslate = 0;
+                    translate = Math.max(minTranslate, Math.min(maxTranslate, translate));
+                    track.style.transform = `translateX(${translate}px)`;
+                    Array.from(dotsContainer.children).forEach((btn,i)=> btn.classList.toggle('active', i === index));
+                }
+
+                function goNext(){ index = (index + 1) % slideCount; update(); }
+                function goPrev(){ index = (index - 1 + slideCount) % slideCount; update(); }
+
+                prevBtn.addEventListener('click', ()=>{ stopAuto(); goPrev(); startAuto(); });
+                nextBtn.addEventListener('click', ()=>{ stopAuto(); goNext(); startAuto(); });
+
+                // dots
+                for(let i=0;i<slideCount;i++){
+                    const b = document.createElement('button');
+                    b.addEventListener('click', ()=>{ index = i; update(); stopAuto(); startAuto(); });
+                    if(i===0) b.classList.add('active');
+                    dotsContainer.appendChild(b);
+                }
+
+                let autoplay;
+                function startAuto(){
+                    stopAuto();
+                    autoplay = setInterval(goNext, 4000);
+                }
+                function stopAuto(){
+                    if(autoplay) clearInterval(autoplay);
+                    autoplay = null;
+                }
+                startAuto();
+
+                const section = document.querySelector('.accommodations');
+                section.addEventListener('mouseenter', stopAuto);
+                section.addEventListener('mouseleave', startAuto);
+
+                window.addEventListener('resize', ()=> setTimeout(update,120));
                 window.requestAnimationFrame(()=> setTimeout(update,50));
             })();
         </script>
